@@ -1,0 +1,100 @@
+.carousal{
+    background-image: url('../images/makka.jpg');
+    background-size:cover;
+   min-height:100vh;
+   position:relative;
+   
+ 
+  &:after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color: rgba(#333, .7);
+    
+}
+.container{
+     padding-top:150px;
+     padding-bottom:60px;
+    .carousal-container{
+        margin: 10px auto;
+        width:70%;
+        height:250px;
+        position: relative;
+    
+        img{
+            position: absolute;
+            width:100%;
+            height:100%;
+            opacity: 0;
+            transition: opacity 1s;
+            z-index: 1;
+            &.visible{
+                opacity: 1;
+            }
+        }
+        .slide-num{
+            position: absolute;
+            left:10px;
+            top:10px;
+            background-color: rgba(#333, .6);
+            color:$mainColor;
+            padding:5px 10px;
+            font-size: 20px;
+            z-index: 2;
+            border-radius: 6px;
+        }
+      }
+      .carousal-controls{
+          margin:10px auto;
+          width:70%;
+          display:flex;
+          justify-content: space-between;
+          z-index:5;
+          position:relative;
+          .prev, .next{
+              background-color: #333;
+              color:$mainColor;
+              font-size:16px;
+             user-select: none;
+              text-align: center;
+              cursor: pointer;
+              border-radius: 4px;
+              width:15%;
+              padding:5px 15px;
+            
+              &.disabled{
+                //   background-color: rgba($mainColor, .5);
+                //   cursor: no-drop;
+              }
+            
+          }
+  
+      }
+      .indicators{
+          ul{
+              text-align: center;
+              li{
+                  display: inline-block;
+                  background-color: beige;
+                  color:#333;
+                  font-weight: bold;
+                  height: 28px;
+                  width: 28px;
+                  border-radius: 4px;
+                  margin:0 2px;
+                  line-height: 28px;
+                  border:2px solid #333;
+                  cursor: pointer;
+                  &.visible{
+                      background-color: $mainColor;
+  
+                  }
+              }
+          }
+      }
+}
+    
+}

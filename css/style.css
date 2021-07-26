@@ -1,0 +1,340 @@
+html {
+  direction: rtl;
+  scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cairo', sans-serif; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.list-unstyled li {
+  list-style: none;
+  margin: 0;
+  display: inline; }
+
+.active {
+  border-radius: 0 20px 0 20px;
+  color: brown;
+  background: rgba(255, 215, 0, 0.7);
+  padding: 5px 10px;
+  border-bottom: 1px solid brown; }
+
+.contain-count {
+  display: flex;
+  justify-content: space-between; }
+
+.zekr {
+  color: wheat;
+  position: relative;
+  padding: 30px;
+  font-size: 18px;
+  line-height: 2;
+  margin-top: 25px;
+  background-color: rgba(51, 51, 51, 0.6);
+  cursor: pointer;
+  user-select: none; }
+  .zekr:active {
+    background-color: rgba(51, 51, 51, 0.9);
+    transform: scale(0.95, 0.95);
+    transition: .1s; }
+
+.zekr-text {
+  text-align: right;
+  padding: 0 15px;
+  flex-basis: calc(100% - 100px); }
+
+.zekr-counter {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: brown;
+  color: beige;
+  padding: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center; }
+
+.zekr-count {
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  background-color: #686868;
+  color: beige;
+  padding: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 10px; }
+
+header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 3; }
+  header .container::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    height: 1px;
+    width: calc(100% - 30px);
+    background-color: #a2a2a2; }
+  header .container .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    header .container .head .site-name {
+      font-size: 35px;
+      font-weight: bold;
+      padding: 20px;
+      color: gold; }
+    header .container .head .ayaa {
+      font-size: 25px;
+      width: fit-content;
+      position: relative;
+      overflow: hidden;
+      -webkit-text-fill-color: transparent;
+      transition: all .5s; }
+      header .container .head .ayaa::after {
+        content: attr(data-ayaa);
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        overflow: hidden;
+        transition: all .5s;
+        -webkit-text-fill-color: gold;
+        animation: fill-effect 2s infinite linear; }
+@keyframes fill-effect {
+  0% {
+    width: 0%; }
+  100% {
+    width: 110%; } }
+      @media (max-width: 767px) {
+        header .container .head .ayaa {
+          display: none; } }
+    header .container .head .logo {
+      width: 50px; }
+      header .container .head .logo img {
+        width: 100%; }
+  header nav .navbar {
+    display: flex;
+    justify-content: space-evenly; }
+    header nav .navbar li {
+      padding: 15px; }
+      header nav .navbar li a {
+        text-decoration: none;
+        color: beige;
+        font-weight: bold;
+        font-size: 20px; }
+        header nav .navbar li a.active {
+          color: brown; }
+        @media (max-width: 767px) {
+          header nav .navbar li a {
+            font-size: 16px;
+            font-weight: normal; } }
+      @media (max-width: 767px) {
+        header nav .navbar li {
+          padding: 10px; } }
+
+.carousal {
+  background-image: url("../images/makka.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  position: relative; }
+  .carousal:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.7); }
+  .carousal .container {
+    padding-top: 150px;
+    padding-bottom: 60px; }
+    .carousal .container .carousal-container {
+      margin: 10px auto;
+      width: 70%;
+      height: 250px;
+      position: relative; }
+      .carousal .container .carousal-container img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s;
+        z-index: 1; }
+        .carousal .container .carousal-container img.visible {
+          opacity: 1; }
+      .carousal .container .carousal-container .slide-num {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background-color: rgba(51, 51, 51, 0.6);
+        color: gold;
+        padding: 5px 10px;
+        font-size: 20px;
+        z-index: 2;
+        border-radius: 6px; }
+    .carousal .container .carousal-controls {
+      margin: 10px auto;
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 5;
+      position: relative; }
+      .carousal .container .carousal-controls .prev, .carousal .container .carousal-controls .next {
+        background-color: #333;
+        color: gold;
+        font-size: 16px;
+        user-select: none;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 15%;
+        padding: 5px 15px; }
+    .carousal .container .indicators ul {
+      text-align: center; }
+      .carousal .container .indicators ul li {
+        display: inline-block;
+        background-color: beige;
+        color: #333;
+        font-weight: bold;
+        height: 28px;
+        width: 28px;
+        border-radius: 4px;
+        margin: 0 2px;
+        line-height: 28px;
+        border: 2px solid #333;
+        cursor: pointer; }
+        .carousal .container .indicators ul li.visible {
+          background-color: gold; }
+
+.sebha {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #4e4e4ea6;
+  z-index: 5;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 40px; }
+  .sebha .sebha-text {
+    color: beige;
+    font-size: 25px;
+    padding: 10px;
+    font-weight: bold; }
+  .sebha .sebha-click {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: brown;
+    cursor: pointer;
+    user-select: none; }
+    .sebha .sebha-click:active {
+      background-color: #a18900;
+      transform: scale(0.95, 0.95); }
+  .sebha .sebha-reset {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: brown;
+    cursor: pointer; }
+
+.container {
+  margin: auto;
+  padding-right: 15px;
+  padding-left: 10px; }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px; } }
+  @media (min-width: 991px) {
+    .container {
+      width: 970px; } }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px; } }
+
+.azkar-sabah {
+  background-image: url("makka.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative; }
+  .azkar-sabah::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.5); }
+  .azkar-sabah .container {
+    padding-top: 150px;
+    padding-bottom: 40px; }
+
+.azkar-mesaa {
+  background-image: url("makka.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative; }
+  .azkar-mesaa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.7); }
+  .azkar-mesaa .container {
+    padding-top: 150px;
+    padding-bottom: 40px; }
+
+.fadl {
+  background-image: url("makka.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative; }
+  .fadl::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.7); }
+  .fadl .container {
+    padding-top: 150px;
+    padding-bottom: 40px; }
+
+footer {
+  background-color: #333;
+  position: absolute;
+  width: 100%; }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    color: beige; }
+    footer .container .design {
+      padding: 20px;
+      direction: ltr; }
+      footer .container .design span {
+        color: gold; }
+    footer .container .copy-right {
+      padding: 20px; }
+
+/*# sourceMappingURL=style.css.map */

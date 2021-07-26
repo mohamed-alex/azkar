@@ -1,0 +1,22 @@
+footer{
+    background-color: $grayColor;
+    position: absolute;
+    width: 100%;
+    .container{
+        display:flex;
+        justify-content: space-between;
+        
+        color:$beigeColor;
+        .design{
+            padding:20px;
+            direction: ltr;
+        span{
+            color:$mainColor;
+        }
+        }
+        .copy-right{
+            padding:20px
+        }
+    }
+   
+}

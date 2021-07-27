@@ -26,6 +26,7 @@
    background-color: rgba($grayColor, .6);
    cursor: pointer;
     user-select:none;
+    z-index:5;
     &:active{
         background-color:rgba($grayColor, .9);
         transform: scale(.95, .95);

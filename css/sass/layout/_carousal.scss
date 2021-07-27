@@ -1,20 +1,5 @@
 .carousal{
-    background-image: url('../images/makka.jpg');
-    background-size:cover;
-   min-height:100vh;
-   position:relative;
-   
- 
-  &:after{
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-    background-color: rgba(#333, .7);
-    
-}
+
 .container{
      padding-top:150px;
      padding-bottom:60px;

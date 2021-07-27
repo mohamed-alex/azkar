@@ -35,7 +35,8 @@ body {
   margin-top: 25px;
   background-color: rgba(51, 51, 51, 0.6);
   cursor: pointer;
-  user-select: none; }
+  user-select: none;
+  z-index: 5; }
   .zekr:active {
     background-color: rgba(51, 51, 51, 0.9);
     transform: scale(0.95, 0.95);
@@ -144,79 +145,66 @@ header {
         header nav .navbar li {
           padding: 10px; } }
 
-.carousal {
-  background-image: url("../images/makka.jpg");
-  background-size: cover;
-  min-height: 100vh;
-  position: relative; }
-  .carousal:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.7); }
-  .carousal .container {
-    padding-top: 150px;
-    padding-bottom: 60px; }
-    .carousal .container .carousal-container {
-      margin: 10px auto;
-      width: 70%;
-      height: 250px;
-      position: relative; }
-      .carousal .container .carousal-container img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 1s;
-        z-index: 1; }
-        .carousal .container .carousal-container img.visible {
-          opacity: 1; }
-      .carousal .container .carousal-container .slide-num {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        background-color: rgba(51, 51, 51, 0.6);
-        color: gold;
-        padding: 5px 10px;
-        font-size: 20px;
-        z-index: 2;
-        border-radius: 6px; }
-    .carousal .container .carousal-controls {
-      margin: 10px auto;
-      width: 70%;
-      display: flex;
-      justify-content: space-between;
-      z-index: 5;
-      position: relative; }
-      .carousal .container .carousal-controls .prev, .carousal .container .carousal-controls .next {
-        background-color: #333;
-        color: gold;
-        font-size: 16px;
-        user-select: none;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 4px;
-        width: 15%;
-        padding: 5px 15px; }
-    .carousal .container .indicators ul {
-      text-align: center; }
-      .carousal .container .indicators ul li {
-        display: inline-block;
-        background-color: beige;
-        color: #333;
-        font-weight: bold;
-        height: 28px;
-        width: 28px;
-        border-radius: 4px;
-        margin: 0 2px;
-        line-height: 28px;
-        border: 2px solid #333;
-        cursor: pointer; }
-        .carousal .container .indicators ul li.visible {
-          background-color: gold; }
+.carousal .container {
+  padding-top: 150px;
+  padding-bottom: 60px; }
+  .carousal .container .carousal-container {
+    margin: 10px auto;
+    width: 70%;
+    height: 250px;
+    position: relative; }
+    .carousal .container .carousal-container img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s;
+      z-index: 1; }
+      .carousal .container .carousal-container img.visible {
+        opacity: 1; }
+    .carousal .container .carousal-container .slide-num {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background-color: rgba(51, 51, 51, 0.6);
+      color: gold;
+      padding: 5px 10px;
+      font-size: 20px;
+      z-index: 2;
+      border-radius: 6px; }
+  .carousal .container .carousal-controls {
+    margin: 10px auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+    position: relative; }
+    .carousal .container .carousal-controls .prev, .carousal .container .carousal-controls .next {
+      background-color: #333;
+      color: gold;
+      font-size: 16px;
+      user-select: none;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 15%;
+      padding: 5px 15px; }
+  .carousal .container .indicators ul {
+    text-align: center; }
+    .carousal .container .indicators ul li {
+      display: inline-block;
+      background-color: beige;
+      color: #333;
+      font-weight: bold;
+      height: 28px;
+      width: 28px;
+      border-radius: 4px;
+      margin: 0 2px;
+      line-height: 28px;
+      border: 2px solid #333;
+      cursor: pointer; }
+      .carousal .container .indicators ul li.visible {
+        background-color: gold; }
 
 .sebha {
   position: relative;
@@ -270,54 +258,21 @@ header {
     .container {
       width: 1170px; } }
 
-.azkar-sabah {
-  background-image: url("makka.jpg");
+.page-background {
+  background-image: url("../images/makka.jpg");
   background-size: cover;
-  background-attachment: fixed;
-  position: relative; }
-  .azkar-sabah::before {
+  min-height: 100vh;
+  position: relative;
+  background-attachment: fixed; }
+  .page-background:after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.5); }
-  .azkar-sabah .container {
-    padding-top: 150px;
-    padding-bottom: 40px; }
-
-.azkar-mesaa {
-  background-image: url("makka.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative; }
-  .azkar-mesaa::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     background-color: rgba(51, 51, 51, 0.7); }
-  .azkar-mesaa .container {
-    padding-top: 150px;
-    padding-bottom: 40px; }
-
-.fadl {
-  background-image: url("makka.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative; }
-  .fadl::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(51, 51, 51, 0.7); }
-  .fadl .container {
+  .page-background .container {
     padding-top: 150px;
     padding-bottom: 40px; }
 
